@@ -6,6 +6,7 @@ import { useNavigate, useLocation, useParams, Navigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import axios from "axios";
 
+const API_BASE = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : '';
 
 const LANGUAGES = [
     "python3",
@@ -114,7 +115,7 @@ function EditorPage() {
     const runCode = async () => {
         setIsCompiling(true);
         try {
-            const response = await axios.post("http://localhost:5000/compile", 
+            const response = await axios.post(`${API_BASE}/compile`, 
             {
                 code: codeRef.current,
                 language: selectedLanguage,
