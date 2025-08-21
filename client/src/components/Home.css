@@ -1,0 +1,7 @@
+.shadow-white {
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.2);
+}
+
+.bg-black-radial {
+    background: radial-gradient(circle, #000000, #1a1a1a, #000000);
+}
